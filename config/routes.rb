@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   scope :user do
     get :sign_in, to: "user#sign_in"
+    post :sign_in_user, to: "user#sign_in_user"
     get :sign_up, to: "user#sign_up"
     post :create_user, to: "user#create_user"
   end

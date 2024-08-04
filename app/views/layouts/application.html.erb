@@ -16,6 +16,24 @@
   </head>
 
   <body>
+    <% if @user %>
+      <header id="navbar-container">
+        <ul id="navbar-items-container">
+          <li>Cart</li>
+          <li>Edit Profile</li>
+          <li>Sign Out</li>
+        </ul>
+      </header>
+    <% end %>
+
     <%= yield %>
+    <div class="toast-notification" data-type="success">
+        <p id="header" class="bold"></p>
+        <p id="subtext"></p>
+    </div>
+    <div class="toast-notification" data-type="error">
+        <p id="header" class="bold">Test</p>
+        <p id="subtext"></p>
+    </div>
   </body>
 </html>

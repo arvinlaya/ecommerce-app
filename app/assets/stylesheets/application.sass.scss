@@ -3,6 +3,7 @@
 @import 'sign_up';
 @import 'sign_in';
 @import 'home';
+@import 'navbar';
 
 * {
     margin: 0;
@@ -23,4 +24,37 @@
     padding: 12px;
     min-height: 100dvh;
     background-color: $white;
+}
+
+.toast-notification[data-type="success"] {
+    background-color: #52b788;
+}
+
+.toast-notification[data-type="error"] {
+    background-color: #f07167;
+}
+
+.toast-notification {
+    position: fixed;
+    top: 10%;
+    right: 0;
+    padding: 1rem 2rem;
+    transform: translateX(110%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+
+    p {
+        color: $white;
+    }
+}
+
+.toast-notification #header {
+    font-weight: 800;
+}
+
+.toast-notification #subtext {
+    font-size: .9rem;
+}
+
+.active {
+    transform: translateX(0);
 }

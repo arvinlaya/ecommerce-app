@@ -1,0 +1,16 @@
+#navbar-container {
+    background-color: #252422;
+    padding: 1rem;
+
+    #navbar-items-container {
+        list-style-type: none;
+        display: flex;
+        justify-content: flex-end;
+        gap: 24px;
+
+        li {
+            color: #f3f0e7;
+            cursor: pointer;
+        }
+    }
+}
