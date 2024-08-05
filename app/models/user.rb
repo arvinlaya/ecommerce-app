@@ -14,6 +14,6 @@ class User < ApplicationRecord
             format: { with: URI::MailTo::EMAIL_REGEXP },
             on: :create
 
-  has_many :cart_items
+  has_many :cart_items, dependent: :destroy
   has_many :products, through: :cart_items
 end

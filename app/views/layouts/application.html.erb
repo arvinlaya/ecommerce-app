@@ -22,8 +22,9 @@
           <li><a href="/home/products">Home</a></li>
           <% if @user.role == "admin" %>
             <li><a href="/product/create">Add Product</a></li>
+          <% else %>
+            <li><a href="/home/cart_items">Cart</a></li>
           <% end %>
-          <li><a href="/home/cart_items">Cart</a></li>
           <li><a href="/user/sign_out">Sign Out</a></li>
         </ul>
       </header>

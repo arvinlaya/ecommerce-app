@@ -24,6 +24,8 @@ export default class extends Controller {
       }, 2000);
     } else {
       window.errorNotifier("Invalid email or password")
+      button.classList.remove("disabled-button")
+      button.innerText = "Sign In"
     }
   }
 
@@ -66,6 +68,8 @@ export default class extends Controller {
       }, 2000);
     } else {
       window.errorNotifier("Something Went Wrong!", result.errors.toString().replaceAll(",", "\n"))
+      button.classList.remove("disabled-button")
+      button.innerText = "Sign Up"
     }
   }
 
