@@ -13,4 +13,6 @@ class User < ApplicationRecord
             length: { minimum: 5 },
             format: { with: URI::MailTo::EMAIL_REGEXP },
             on: :create
+
+  has_many :products
 end
