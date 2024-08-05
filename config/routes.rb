@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   scope :product do
     get :create, to: "product#create"
+    post :create, to: "product#create_product"
   end
 end
