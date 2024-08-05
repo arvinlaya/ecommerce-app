@@ -20,5 +20,8 @@ Rails.application.routes.draw do
   scope :product do
     get :create, to: "product#create"
     post :create, to: "product#create_product"
+    get "edit/:product_id", to: "product#edit"
+    put :edit, to: "product#edit_product"
+    delete :delete, to: "product#delete_product"
   end
 end

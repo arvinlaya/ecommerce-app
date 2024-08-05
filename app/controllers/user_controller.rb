@@ -36,7 +36,7 @@ class UserController < ApplicationController
 
     user = User.new(user_data)
     result = {
-      success: user.save,
+      success: !!user.save,
       errors: user.errors.full_messages
     }
 

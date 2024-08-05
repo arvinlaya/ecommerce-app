@@ -1,0 +1,21 @@
+<div id="product-container" class="container" data-controller="product">
+	<div id="header-container">
+		<h1>Edit Product <span><i class="fa-solid fa-cart-shopping"></i></span></h1>
+	</div>
+	<form id="product-form-container">
+		<div class="input-container">
+			<i class="fa-solid fa-pencil"></i>
+			<input type="text" name="name" placeholder="Name" value="<%= @product.name %>" data-product-target="name"/>
+		</div>
+		<div class="input-container">
+			<i class="fa-solid fa-pencil"></i>
+			<input type="text" name="description" placeholder="Description" value="<%= @product.description %>" data-product-target="description"/>
+		</div>
+		<div class="input-container">
+			<i class="fa-solid fa-pencil"></i>
+			<input type="number" name="price" placeholder="Price" value="<%= @product.price %>" data-product-target="price"/>
+		</div>
+        <input type="hidden" name="productId" value="<%= @product.id %>" data-product-target="productId"/>
+		<button id="submit-button" data-action="click->product#editProduct">Edit</button>
+	</form>
+</div>
