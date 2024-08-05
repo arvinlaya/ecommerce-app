@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EcommerceApp</title>
+    <title>Ecommerce App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -19,7 +19,11 @@
     <% if @user %>
       <header id="navbar-container">
         <ul id="navbar-items-container">
-          <li>Cart</li>
+          <% if @user.role == "admin" %>
+            <li><a href="/product/create">Add Product</a></li>
+          <% else %>
+            <li>Cart</li>
+          <% end %>
           <li>Edit Profile</li>
           <li>Sign Out</li>
         </ul>

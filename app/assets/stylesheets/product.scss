@@ -1,0 +1,58 @@
+#product-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 32px;
+
+	#header-container {
+		text-align: center;
+
+		h2 {
+				font-size: .9rem;
+				font-weight: 400;
+		}
+	}
+
+	#product-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+		.input-container {
+			display: flex;
+			align-items: center;
+			gap: .5rem;
+
+			input {
+				font-size: .9rem;
+				padding: .4rem 1rem;
+				width: 15rem;
+			}
+		}
+
+		#submit-button {
+			background-color: #252422;
+			color: #f3f0e7;
+			width: 100%;
+			padding: .5rem;
+			border: none;
+			border-radius: .2rem;
+			cursor: pointer;
+			font-weight: 800;
+
+			&:active {
+				transform: translate(.1rem, .1rem);
+			}
+		}
+	}
+
+	#sign-up-text {
+		font-size: .8rem;
+
+		a {
+			font-weight: 800;
+		}
+	}
+}

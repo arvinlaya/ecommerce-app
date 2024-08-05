@@ -1,5 +1,7 @@
+@import 'variables';
+
 #navbar-container {
-    background-color: #252422;
+    background-color: $black;
     padding: 1rem;
 
     #navbar-items-container {
@@ -8,8 +10,8 @@
         justify-content: flex-end;
         gap: 24px;
 
-        li {
-            color: #f3f0e7;
+        li, a {
+            color: $white;
             cursor: pointer;
         }
     }

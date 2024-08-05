@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import ProductController from "./product_controller"
+application.register("product", ProductController)
+
 import UserController from "./user_controller"
 application.register("user", UserController)

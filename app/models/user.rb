@@ -5,10 +5,12 @@ class User < ApplicationRecord
             :last_name,
             :password,
             presence: true,
-            length: { minimum: 1 }
+            length: { minimum: 1 },
+            on: :create
   validates :email,
             presence: true,
             uniqueness: true,
             length: { minimum: 5 },
-            format: { with: URI::MailTo::EMAIL_REGEXP }
+            format: { with: URI::MailTo::EMAIL_REGEXP },
+            on: :create
 end

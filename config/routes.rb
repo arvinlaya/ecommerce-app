@@ -17,4 +17,7 @@ Rails.application.routes.draw do
     post :create_user, to: "user#create_user"
   end
 
+  scope :product do
+    get :create, to: "product#create"
+  end
 end

@@ -1,0 +1,23 @@
+<div id="product-container" class="container" data-controller="product">
+	<div id="header-container">
+		<h1>Create Product <span><i class="fa-solid fa-cart-shopping"></i></span></h1>
+	</div>
+	<form id="product-form-container">
+		<div class="input-container">
+			<i class="fa-solid fa-pencil"></i>
+			<label>
+				Image
+				<input type="file" name="image" data-product-target="image">
+			</label>
+		</div>
+        <div class="input-container">
+            <i class="fa-solid fa-pencil"></i>
+			<input type="text" name="name" placeholder="Name" data-product-target="name">
+		</div>
+		<div class="input-container">
+			<i class="fa-solid fa-pencil"></i>
+			<input type="number" name="price" placeholder="Price" data-product-target="price">
+		</div>
+		<button id="submit-button" data-action="click->user#signUp">Create</button>
+	</form>
+</div>
