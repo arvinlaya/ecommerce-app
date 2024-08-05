@@ -130,4 +130,64 @@ export default class extends Controller {
       body: JSON.stringify({ productId })
     })
   }
+
+  async addToCartProduct(event) {
+    // Update button state
+    const button = event.currentTarget
+    button.disabled = true
+
+    // Sends post request for product add to cart
+    const response = await this.#addToCartProductRequest(button.getAttribute("data-product-id"))
+    const { result } = await response.json()
+
+    button.disabled = false
+
+    // Handle result state
+    if(result.success) {
+      window.successNotifier("Product Added to Cart")
+    } else {
+      window.errorNotifier("Something Went Wrong!", result.errors.toString().replaceAll(",", "\n"))
+    }
+  }
+
+  #addToCartProductRequest(productId) {
+    const url = "/product/add_to_cart"
+    return fetch(url, {
+      method: "POST",
+      headers: { 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ productId })
+    })
+  }
+
+  async deleteCartItem(event) {
+    // Update button state
+    const button = event.currentTarget
+    button.disabled = true
+
+    // Sends post request for product deletion
+    const response = await this.#deleteCartItemRequest(button.getAttribute("data-product-id"))
+    const { result } = await response.json()
+
+    // Handle result state
+    if(result.success) {
+      window.successNotifier("Cart Item Deleted")
+      // Deletes product card on successful delete
+      button.parentElement.parentElement.remove()
+    } else {
+      window.errorNotifier("Something Went Wrong!", result.errors.toString().replaceAll(",", "\n"))
+    }
+  }
+
+  #deleteCartItemRequest(productId) {
+    const url = "/home/cart_item"
+    return fetch(url, {
+      method: "DELETE",
+      headers: { 
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ productId })
+    })
+  }
 }

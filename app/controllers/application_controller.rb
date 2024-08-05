@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
 
   def require_sign_in
     unless session[:current_user_id]
-      redirect_to user_sign_in_path
+      redirect_to sign_in_path
     end
   end
 
   def clear_session
-    session[:current_user_id] = nil
+    session.clear
   end
 end

@@ -6,4 +6,7 @@ class Product < ApplicationRecord
             on: :create
   validates :price,
             presence: true
+
+  has_many :cart_items
+  has_many :users, through: :cart_items
 end

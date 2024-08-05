@@ -10,21 +10,17 @@ export default class extends Controller {
     // Update button state
     const button = event.currentTarget
     button.classList.add("disabled-button")
-    button.innerText = "Submitting..."
+    button.innerText = "Signing in..."
 
     // Sends post request for user sign in
     const response = await this.#signInUser()
     const { result } = await response.json()
 
-    // Update button state
-    button.classList.remove("disabled-button")
-    button.innerText = "Sign In"
-
     // Handle result state
     if(result.success) {
       window.successNotifier("Sign In Successful!")
       setTimeout(function () {
-        window.location.href = "/home";
+        window.location.href = "/home/products";
       }, 2000);
     } else {
       window.errorNotifier("Invalid email or password")
@@ -61,10 +57,6 @@ export default class extends Controller {
     // Sends post request for user creation
     const response = await this.#createUserRequest()
     const { result } = await response.json()
-
-    // Update button state
-    button.classList.remove("disabled-button")
-    button.innerText = "Sign Up"
 
     // Handle result state
     if(result.success) {

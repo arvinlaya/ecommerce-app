@@ -3,6 +3,11 @@
 #home-container {
     min-height: 100dvh;
 
+    #header {
+        text-align: center;
+        margin: 1rem;
+    }
+
     #products-container {
         display: flex;
         justify-content: center;

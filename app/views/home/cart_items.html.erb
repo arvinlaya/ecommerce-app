@@ -1,5 +1,5 @@
 <div id="home-container" class="container">
-	<h1 id="header">Products</h1>
+	<h1 id="header">Cart Items</h1>
 	<div id="products-container">
 		<% @products.each do |product| %>
 			<div class="product-card">	
@@ -7,11 +7,7 @@
 				<p id="description"><%= product.description %></p>
 				<p id="price">₱<%= product.price %></p>
 				<div class="icons-container" data-controller="product">
-					<button data-product-id=<%= product.id %> data-action="click->product#addToCartProduct">
-						<i class="fa-solid fa-cart-shopping"></i>
-					</button>
-					<a href= "/product/edit/<%= product.id %>"><i class="fa-solid fa-pencil"></i></a>
-					<button data-product-id=<%= product.id %> data-action="click->product#deleteProduct">
+					<button data-product-id=<%= product.id %> data-action="click->product#deleteCartItem">
 						<i class="fa-solid fa-trash"></i>
 					</button>
 				</div>

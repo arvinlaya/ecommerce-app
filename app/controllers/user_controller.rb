@@ -9,6 +9,12 @@ class UserController < ApplicationController
     clear_session
   end
 
+  def sign_out
+    # Clear session
+    clear_session
+    redirect_to sign_in_path
+  end
+
   def sign_in_user
     permitted_params = params.permit(:email, :password)
     user = User.find_by(email: permitted_params[:email])&.authenticate(permitted_params[:password])
