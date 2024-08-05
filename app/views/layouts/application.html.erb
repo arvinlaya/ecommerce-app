@@ -19,6 +19,7 @@
     <% if @user %>
       <header id="navbar-container">
         <ul id="navbar-items-container">
+          <li><a href="/home">Home</a></li>
           <% if @user.role == "admin" %>
             <li><a href="/product/create">Add Product</a></li>
           <% else %>

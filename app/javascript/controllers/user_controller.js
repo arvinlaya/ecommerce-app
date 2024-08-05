@@ -59,7 +59,7 @@ export default class extends Controller {
     button.innerText = "Submitting..."
 
     // Sends post request for user creation
-    const response = await this.#createUser()
+    const response = await this.#createUserRequest()
     const { result } = await response.json()
 
     // Update button state
@@ -77,7 +77,7 @@ export default class extends Controller {
     }
   }
 
-  #createUser() {
+  #createUserRequest() {
     const url = "/user/create_user"
     return fetch(url, {
       method: "POST",
